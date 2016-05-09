@@ -25,9 +25,15 @@ Maven
 
 ### 用法
 
->1.导入项目
+1.导入项目
 
->2. 在layout中加入
+```
+compile 'com.jiang.android.scalabletabindicator:library:1.0.1'
+
+```
+
+2. 在layout中加入
+
 ```xml
  <com.jiang.android.scalabletabindicator.library.ScalableTabIndicator
         android:id="@+id/tabindicator"
@@ -37,14 +43,15 @@ Maven
         />
 ```
 
->3. 在代码中加入
+3. 在代码中加入
+
 ```java
  mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabindicator);
  mScalableTabIndicator.setViewPager(pager);
   mScalableTabIndicator.addTab(//TODO...);
 ```
 
->4.最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1和TabView2,2个例子。
+4.最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1和TabView2,2个例子。
 
 ```java
     /**
@@ -76,7 +83,7 @@ Maven
 
 
 ###作者
->* New_Tab mailto:jyuesong@gmail.com
+>* New_Tab - <jyuesong@gmail.com>
 
 
 
