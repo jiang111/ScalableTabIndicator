@@ -28,14 +28,12 @@
 
 package com.jiang.android.scalabletabindicator.library;
 
-import android.content.Context;
-import android.util.AttributeSet;
 import android.view.View;
 
 /**
  * Created by jiang on 16/5/9.
  */
-public abstract class Tab extends View implements View.OnClickListener {
+public abstract class Tab implements View.OnClickListener {
 
     private boolean checked;
     private int position;
@@ -44,20 +42,6 @@ public abstract class Tab extends View implements View.OnClickListener {
     public boolean isChecked() {
         return checked;
     }
-
-    public Tab(Context context) {
-        super(context);
-    }
-
-    public Tab(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    public Tab(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-
-    }
-
 
     public void active() {
         checked = true;
@@ -81,12 +65,15 @@ public abstract class Tab extends View implements View.OnClickListener {
 
     /**
      * 获取该控件需要的宽度
+     * 推荐使用:getMeasuredWidth()>getWidth()?getMeasuredWidth():getWidth()
+     *
      * @return
      */
     public abstract int getTabNeededWidth();
 
     /**
      * 获取view
+     *
      * @return
      */
     public abstract View getView();

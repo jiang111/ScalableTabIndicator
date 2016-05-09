@@ -45,30 +45,31 @@ public class TabView2 extends Tab {
     private final TextView mTab2Tv;
 
     public TabView2(Context context) {
-        super(context);
         mRootView = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.tab2_layout, null);
         mTab2Tv = (TextView) mRootView.findViewById(R.id.tab2_tv);
         mRootView.setClickable(true);
         mRootView.setOnClickListener(this);
     }
-    public void setText(String title){
+
+    public void setText(String title) {
         mTab2Tv.setText(title);
     }
+
     @Override
     public void actived() {
-        mTab2Tv.setTextColor(getResources().getColor(R.color.colorAccent));
+        mTab2Tv.setTextColor(mRootView.getResources().getColor(R.color.colorAccent));
 
     }
 
     @Override
     public void dismissed() {
-        mTab2Tv.setTextColor(getResources().getColor(R.color.black));
+        mTab2Tv.setTextColor(mRootView.getResources().getColor(R.color.black));
 
     }
 
     @Override
     public int getTabNeededWidth() {
-        return mRootView.getMeasuredWidth()>mRootView.getWidth()?mRootView.getMeasuredWidth():mRootView.getWidth();
+        return mRootView.getMeasuredWidth() > mRootView.getWidth() ? mRootView.getMeasuredWidth() : mRootView.getWidth();
     }
 
     @Override

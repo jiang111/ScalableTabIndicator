@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="80dp"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:paddingLeft="5dp">
 
     <ImageView
         android:layout_width="80dp"
@@ -11,9 +12,9 @@
         android:src="@mipmap/tab2"/>
 
     <TextView
+        android:id="@+id/tab2_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tab2_tv"
         android:text="第二个tab"/>
 
 

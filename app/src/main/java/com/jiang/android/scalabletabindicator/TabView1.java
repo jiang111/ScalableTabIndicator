@@ -45,27 +45,25 @@ public class TabView1 extends Tab {
     private final TextView mTab1Tv;
 
     public TabView1(Context context) {
-        super(context);
-
         mRootView = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.tab1_layout, null);
         mTab1Tv = (TextView) mRootView.findViewById(R.id.tab1_tv);
         mRootView.setClickable(true);
         mRootView.setOnClickListener(this);
     }
 
-    public void setText(String title){
+    public void setText(String title) {
         mTab1Tv.setText(title);
     }
 
     @Override
     public void actived() {
-        mTab1Tv.setTextColor(getResources().getColor(R.color.colorAccent));
+        mTab1Tv.setTextColor(mRootView.getResources().getColor(R.color.colorAccent));
 
     }
 
     @Override
     public void dismissed() {
-        mTab1Tv.setTextColor(getResources().getColor(R.color.black));
+        mTab1Tv.setTextColor(mRootView.getResources().getColor(R.color.black));
 
     }
 

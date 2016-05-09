@@ -12,7 +12,7 @@ import com.jiang.android.scalabletabindicator.library.ScalableTabIndicator;
 public class MainActivity extends AppCompatActivity {
 
 
-    ScalableTabIndicator tabHost;
+    ScalableTabIndicator mScalableTabIndicator;
     ViewPager pager;
     ViewPagerAdapter adapter;
 
@@ -20,23 +20,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tabHost = (ScalableTabIndicator) this.findViewById(R.id.tabHost);
-        tabHost.setScrollable(true);
+        mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabHost);
         pager = (ViewPager) this.findViewById(R.id.pager);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
-        tabHost.setViewPager(pager);
+        mScalableTabIndicator.setViewPager(pager);
 
-        // insert all tabs from pagerAdapter data
         for (int i = 0; i < adapter.getCount(); i++) {
             if (i % 2 == 0) {
                 TabView1 view1 = new TabView1(this);
-                view1.setText("第"+i+"个tab");
-                tabHost.addTab(view1);
+                view1.setText("第" + i + "个tab");
+                mScalableTabIndicator.addTab(view1);
             } else {
                 TabView2 view2 = new TabView2(this);
-                view2.setText("第"+i+"个tab");
-                tabHost.addTab(view2);
+                view2.setText("第" + i + "个tab");
+                mScalableTabIndicator.addTab(view2);
             }
 
         }
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 5;
+            return 15;
         }
 
         @Override

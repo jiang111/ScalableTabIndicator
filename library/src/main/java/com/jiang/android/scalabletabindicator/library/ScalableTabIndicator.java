@@ -66,6 +66,10 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
      * viewpager
      */
     private ViewPager mViewPager;
+    /**
+     * 监听viewpager的滚动状态
+     */
+    private ChangeListener changeListener;
 
 
     public ScalableTabIndicator(Context context) {
@@ -144,6 +148,11 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
 
     }
 
+    /**
+     * 判断需不需要进行滚动
+     *
+     * @return
+     */
     private boolean needScrollable() {
 
         int width = 0;
@@ -201,6 +210,9 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     }
 
     public void setSelectedNavigationItem(int position) {
+        if (mViewPager == null) {
+            throw new NullPointerException("ViewPager can not be null");
+        }
         if (position < 0 || position > tabs.size()) {
             throw new RuntimeException("Index out bounds");
         } else {
@@ -212,12 +224,23 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
                     tabs.get(i).dismiss();
                 }
             }
-            scrollTo(position);
+            if (scrollable)
+                scrollTo(position);
             tabSelected = position;
         }
     }
 
     //***** set get ***//
+
+
+    public ChangeListener getChangeListener() {
+        return changeListener;
+    }
+
+    public void setChangeListener(ChangeListener changeListener) {
+        this.changeListener = changeListener;
+    }
+
     public ViewPager getViewPager() {
         return mViewPager;
     }
@@ -239,15 +262,32 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+        if (changeListener != null)
+            changeListener.onPageScrolled(position, positionOffset, positionOffsetPixels);
     }
 
     @Override
     public void onPageSelected(int position) {
         setSelectedNavigationItem(position);
+        if (changeListener != null)
+            changeListener.onPageSelected(position);
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
+        if (changeListener != null)
+            changeListener.onPageScrollStateChanged(state);
+    }
 
+    /**
+     * 和viewpager的功能一样
+     */
+    public interface ChangeListener {
+
+        void onPageScrolled(int position, float positionOffset, int positionOffsetPixels);
+
+        void onPageSelected(int position);
+
+        void onPageScrollStateChanged(int state);
     }
 }
