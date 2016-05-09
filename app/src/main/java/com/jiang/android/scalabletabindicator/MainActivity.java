@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabHost);
+        mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabindicator);
         pager = (ViewPager) this.findViewById(R.id.pager);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         pager.setPageTransformer(true, new RotateTransformer());
