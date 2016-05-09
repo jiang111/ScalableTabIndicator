@@ -44,4 +44,39 @@ Maven
   mScalableTabIndicator.addTab(//TODO...);
 ```
 
+>4.最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1和TabView2,2个例子。
+
+```java
+    /**
+     * 当前被选中
+     */
+    public abstract void actived();
+
+    /**
+     * 当前没有被选中
+     */
+    public abstract void dismissed();
+
+    /**
+     * 获取该控件需要的宽度
+     * 推荐使用:getMeasuredWidth()>getWidth()?getMeasuredWidth():getWidth()
+     *
+     * @return
+     */
+    public abstract int getTabNeededWidth();
+
+    /**
+     * 获取view
+     *
+     * @return
+     */
+    public abstract View getView();
+
+```
+
+
+###作者
+>* New_Tab mailto:jyuesong@gmail.com
+
+
 
