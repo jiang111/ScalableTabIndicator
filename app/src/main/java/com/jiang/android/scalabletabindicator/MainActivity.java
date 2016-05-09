@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 
 import com.jiang.android.scalabletabindicator.library.ScalableTabIndicator;
 import com.jiang.android.transformer.transformer.RotateTransformer;
@@ -14,23 +13,22 @@ import com.jiang.android.transformer.transformer.RotateTransformer;
 public class MainActivity extends AppCompatActivity {
 
 
-    ScalableTabIndicator mScalableTabIndicator;
-    ViewPager pager;
-    ViewPagerAdapter adapter;
-    private Button mButton;
+    private ScalableTabIndicator mScalableTabIndicator;
+    private ViewPager mPager;
+    private ViewPagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabindicator);
-        pager = (ViewPager) this.findViewById(R.id.pager);
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        pager.setPageTransformer(true, new RotateTransformer());
-        pager.setAdapter(adapter);
-        mScalableTabIndicator.setViewPager(pager);
+        mPager = (ViewPager) this.findViewById(R.id.pager);
+        mAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        mPager.setPageTransformer(true, new RotateTransformer());
+        mPager.setAdapter(mAdapter);
+        mScalableTabIndicator.setViewPager(mPager);
 
-        for (int i = 0; i < adapter.getCount(); i++) {
+        for (int i = 0; i < mAdapter.getCount(); i++) {
             if (i % 2 == 0) {
                 TabView1 view1 = new TabView1(this);
                 view1.setText("第" + i + "个tab");
@@ -42,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(5000);
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            mScalableTabIndicator.setCurrentItem(12);
+//                        }
+//                    });
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
 
     }
 
@@ -63,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return "Sezione " + position;
+            return " " + position;
         }
 
     }
