@@ -174,7 +174,9 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
             }
             totalWidth += width;
         }
-        mScrollView.smoothScrollTo(totalWidth, 0);
+        final int finalTotalWidth = totalWidth;
+        mScrollView.smoothScrollTo(finalTotalWidth, 0);
+
     }
 
     @Override
@@ -224,8 +226,9 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
                     tabs.get(i).dismiss();
                 }
             }
-            if (scrollable)
+            if (scrollable) {
                 scrollTo(position);
+            }
             tabSelected = position;
         }
     }

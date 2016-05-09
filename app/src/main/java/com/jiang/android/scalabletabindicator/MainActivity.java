@@ -6,8 +6,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
 import com.jiang.android.scalabletabindicator.library.ScalableTabIndicator;
+import com.jiang.android.transformer.transformer.RotateTransformer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ScalableTabIndicator mScalableTabIndicator;
     ViewPager pager;
     ViewPagerAdapter adapter;
+    private Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabHost);
         pager = (ViewPager) this.findViewById(R.id.pager);
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        pager.setPageTransformer(true, new RotateTransformer());
         pager.setAdapter(adapter);
         mScalableTabIndicator.setViewPager(pager);
 
@@ -49,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public Fragment getItem(int num) {
-            return SimpleFragment.newInstance(num + "");
+            return SimpleFragment.newInstance(num + "", num);
         }
 
         @Override
         public int getCount() {
-            return 15;
+            return 21;
         }
 
         @Override
