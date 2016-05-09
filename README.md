@@ -37,8 +37,7 @@ Maven
    <com.jiang.android.scalabletabindicator.library.ScalableTabIndicator
           android:id="@+id/tabindicator"
           android:layout_width="match_parent"
-          android:layout_height="120dp"
-          android:layout_below="@+id/toolbar"
+          android:layout_height=""
           />
   ```
 
