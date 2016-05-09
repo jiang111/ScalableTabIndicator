@@ -1,6 +1,5 @@
 # ScalableTabIndicator
-ScalableTabIndicator
-### 可定制性很高的Indicator,结合ViewPager展示
+### 可定制的Indicator,结合ViewPager使用
 
 ![](https://raw.githubusercontent.com/jiang111/ScalableTabIndicator/master/art/7.gif)
 
