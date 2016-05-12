@@ -1,5 +1,5 @@
 # ScalableTabIndicator
-### 可定制的Indicator,结合ViewPager使用
+### 可定制的Indicator,结合ViewPager使用,当然不通过ViewPager也可以用
 [ ![Download](https://api.bintray.com/packages/yuesong/maven/ScalableTabIndicator/images/download.svg) ](https://bintray.com/yuesong/maven/ScalableTabIndicator/_latestVersion)
 
 
@@ -48,7 +48,8 @@ Maven
 
   ```java
    mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabindicator);
-   mScalableTabIndicator.setViewPager(pager);
+   //可要可不要,如果你用到了ViewPager那就要,没用到可能就要你自己控制相关的东西了
+   mScalableTabIndicator.setViewPager(pager); 
     mScalableTabIndicator.addTab(//TODO...);
   ```
 
