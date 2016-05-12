@@ -71,6 +71,11 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
      */
     private ChangeListener changeListener;
 
+    /**
+     * 用于返回给Tab的滑动监听
+     */
+    private int position;
+
 
     public ScalableTabIndicator(Context context) {
         this(context, null);
@@ -137,7 +142,7 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
             for (Tab tab : tabs) {
                 LinearLayout.LayoutParams params;
                 params = new LinearLayout.LayoutParams(HorizontalScrollView.LayoutParams.WRAP_CONTENT, HorizontalScrollView.LayoutParams.MATCH_PARENT);
-                mLinearLayout.addView(tab.getView(),params);
+                mLinearLayout.addView(tab.getView(), params);
             }
 
         }
@@ -267,6 +272,8 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
 
         if (changeListener != null)
             changeListener.onPageScrolled(position, positionOffset, positionOffsetPixels);
+        tabs.get(position).onPageScrolled(positionOffset, positionOffsetPixels);
+
     }
 
     @Override

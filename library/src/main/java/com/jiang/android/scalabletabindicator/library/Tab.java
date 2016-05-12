@@ -35,6 +35,8 @@ import android.view.View;
  */
 public abstract class Tab implements View.OnClickListener {
 
+    private static final String TAG = "Tab";
+
     private boolean checked;
     private int position;
     private ScalableTabIndicator mScalableTabIndicator;
@@ -98,5 +100,16 @@ public abstract class Tab implements View.OnClickListener {
     public void onClick(View v) {
         mScalableTabIndicator.setCurrentItem(position);
     }
+
+    /**
+     * 如若需要对tab的item元素进行相关操作，可重写这个方法
+     *
+     * @param positionOffset
+     * @param positionOffsetPixels
+     */
+    public void onPageScrolled(float positionOffset, int positionOffsetPixels) {
+
+    }
+
 
 }

@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(mAdapter);
         mScalableTabIndicator.setViewPager(mPager);
 
-
     }
 
     private class ViewPagerAdapter extends FragmentStatePagerAdapter {

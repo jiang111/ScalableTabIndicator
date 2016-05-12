@@ -84,4 +84,9 @@ public class TabView3 extends Tab {
     public View getView() {
         return mRoot;
     }
+
+    @Override
+    public void onPageScrolled(float positionOffset, int positionOffsetPixels) {
+        super.onPageScrolled(positionOffset, positionOffsetPixels);
+    }
 }
