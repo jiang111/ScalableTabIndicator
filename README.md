@@ -1,5 +1,8 @@
 # ScalableTabIndicator
 ### 可定制的Indicator,结合ViewPager使用
+[ ![Download](https://api.bintray.com/packages/yuesong/maven/ScalableTabIndicator/images/download.svg) ](https://bintray.com/yuesong/maven/ScalableTabIndicator/_latestVersion)
+
+
 
 ![](https://raw.githubusercontent.com/jiang111/ScalableTabIndicator/master/art/7.gif)
 
@@ -7,7 +10,7 @@
 ### 导入
 gradle
 ```
-compile 'com.jiang.android.scalabletabindicator:library:1.0.1'
+compile 'com.jiang.android.scalabletabindicator:library:@aar'
 
 ```
 
