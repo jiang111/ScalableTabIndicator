@@ -28,34 +28,27 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(mAdapter);
         mScalableTabIndicator.setViewPager(mPager);
 
-        for (int i = 0; i < mAdapter.getCount(); i++) {
-            if (i % 2 == 0) {
-                TabView1 view1 = new TabView1(this);
-                view1.setText("第" + i + "个tab");
-                mScalableTabIndicator.addTab(view1);
-            } else {
-                TabView2 view2 = new TabView2(this);
-                view2.setText("第" + i + "个tab");
-                mScalableTabIndicator.addTab(view2);
-            }
-
-        }
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(5000);
-//                    runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            mScalableTabIndicator.setCurrentItem(12);
-//                        }
-//                    });
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
+        TabView3 tabView3 = new TabView3(this);
+        tabView3.setText("语文");
+        mScalableTabIndicator.addTab(tabView3);
+        TabView3 tabView32 = new TabView3(this);
+        tabView32.setText("数学");
+        mScalableTabIndicator.addTab(tabView32);
+        TabView3 tabView33 = new TabView3(this);
+        tabView33.setText("英语");
+        mScalableTabIndicator.addTab(tabView33);
+        TabView3 tabView34 = new TabView3(this);
+        tabView34.setText("政治");
+        mScalableTabIndicator.addTab(tabView34);
+        TabView3 tabView35 = new TabView3(this);
+        tabView35.setText("地理");
+        mScalableTabIndicator.addTab(tabView35);
+        TabView3 tabView36 = new TabView3(this);
+        tabView36.setText("生物");
+        mScalableTabIndicator.addTab(tabView36);
+        TabView3 tabView37 = new TabView3(this);
+        tabView37.setText("体育");
+        mScalableTabIndicator.addTab(tabView37);
 
     }
 
