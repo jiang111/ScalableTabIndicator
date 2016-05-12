@@ -203,10 +203,11 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     }
 
     public void setCurrentItem(int position) {
-        if (mViewPager == null) {
-            throw new NullPointerException("ViewPager can not be null");
+        if (mViewPager != null) {
+            mViewPager.setCurrentItem(position);
+        }else{
+            setSelectedNavigationItem(position);
         }
-        mViewPager.setCurrentItem(position);
     }
 
     @Override
@@ -217,9 +218,6 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     }
 
     public void setSelectedNavigationItem(int position) {
-        if (mViewPager == null) {
-            throw new NullPointerException("ViewPager can not be null");
-        }
         if (position < 0 || position > tabs.size()) {
             throw new RuntimeException("Index out bounds");
         } else {
