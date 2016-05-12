@@ -1,5 +1,8 @@
 # ScalableTabIndicator
 ### 可定制的Indicator,结合ViewPager使用
+[ ![Download](https://api.bintray.com/packages/yuesong/maven/ScalableTabIndicator/images/download.svg) ](https://bintray.com/yuesong/maven/ScalableTabIndicator/_latestVersion)
+
+
 
 ![](https://raw.githubusercontent.com/jiang111/ScalableTabIndicator/master/art/7.gif)
 
@@ -7,7 +10,7 @@
 ### 导入
 gradle
 ```
-compile 'com.jiang.android.scalabletabindicator:library:1.0.1'
+compile 'com.jiang.android.scalabletabindicator:library:@aar'
 
 ```
 
@@ -49,7 +52,7 @@ Maven
     mScalableTabIndicator.addTab(//TODO...);
   ```
 
->* 最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1和TabView2,2个例子。
+>* 最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1,TabView2和TabView3,3个例子。
 
   ```java
       /**
@@ -96,4 +99,8 @@ Maven
 >* 用于学习RxJava操作符的APP: https://github.com/jiang111/RxJavaApp
 
 >* 展示注册进度的view: https://github.com/jiang111/ProgressView
+
+>* 可定制的ViewPagerIndicator: https://github.com/jiang111/ScalableTabIndicator
+
+>* 通过viewpager的滑动来对fragment内的元素进行动画操作: https://github.com/jiang111/ViewPagerTransformer
 
