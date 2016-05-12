@@ -81,7 +81,35 @@ Maven
       public abstract View getView();
   
   ```
+>* 注意: 要想知道viewpager回调的进度,可以通过
 
+```java
+mScalableTabIndicator.setChangeListener(new ScalableTabIndicator.ChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+            @Override
+            public void onPageSelected(int position) {
+            }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+```
+
+或者重写Tab类中的
+
+```java
+ /**
+     * 如若需要对tab的item元素进行相关操作，可重写这个方法
+     *
+     * @param positionOffset
+     * @param positionOffsetPixels
+     */
+    public void onPageScrolled(float positionOffset, int positionOffsetPixels) {
+    }
+```
 
 ###作者
 >* New_Tab - <jyuesong@gmail.com>
