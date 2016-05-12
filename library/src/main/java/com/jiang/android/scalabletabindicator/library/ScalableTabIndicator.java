@@ -72,9 +72,9 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     private ChangeListener changeListener;
 
     /**
-     * 用于返回给Tab的滑动监听
+     * 当前的item被点击了
      */
-    private int position;
+    private OnItemClickListener mOnClickListener;
 
 
     public ScalableTabIndicator(Context context) {
@@ -205,8 +205,12 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
     public void setCurrentItem(int position) {
         if (mViewPager != null) {
             mViewPager.setCurrentItem(position);
-        }else{
+        } else {
             setSelectedNavigationItem(position);
+            if (mOnClickListener != null) {
+                mOnClickListener.onClick(position);
+            }
+
         }
     }
 
@@ -238,6 +242,14 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
 
     //***** set get ***//
 
+
+    public OnItemClickListener getOnClickListener() {
+        return mOnClickListener;
+    }
+
+    public void setOnClickListener(OnItemClickListener onClickListener) {
+        mOnClickListener = onClickListener;
+    }
 
     public ChangeListener getChangeListener() {
         return changeListener;
@@ -297,5 +309,12 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
         void onPageSelected(int position);
 
         void onPageScrollStateChanged(int state);
+    }
+
+
+    public interface OnItemClickListener {
+
+        void onClick(int position);
+
     }
 }
