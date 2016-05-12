@@ -48,9 +48,18 @@ Maven
 
   ```java
    mScalableTabIndicator = (ScalableTabIndicator) this.findViewById(R.id.tabindicator);
-   //可要可不要,如果你用到了ViewPager那就要,没用到可能就要你自己控制相关的东西了
+   /*可要可不要,如果你用到了ViewPager那就要,如果没用到ViewPager那就需要初始化的时候调用mScalableTabIndicator.setCurrentIte m(0);然后mScalableTabIndicator需要实现OnItemClickListener接口 */
    mScalableTabIndicator.setViewPager(pager); 
-    mScalableTabIndicator.addTab(//TODO...);
+  mScalableTabIndicator.addTab(//TODO...);
+  //没有ViewPager的情况下使用下面这两句
+    mScalableTabIndicator.setOnClickListener(new ScalableTabIndicator.OnItemClickListener() {
+        @Override
+         public void onClick(int position) {
+        }
+    });
+  mScalableTabIndicator.setCurrentItem(0);
+    
+    
   ```
 
 >* 最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1,TabView2和TabView3,3个例子。
