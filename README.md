@@ -49,7 +49,7 @@ Maven
     mScalableTabIndicator.addTab(//TODO...);
   ```
 
->* 最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1和TabView2,2个例子。
+>* 最关键的一步,新建类继承Tab类，并重写相关的方法,在demo中有TabView1,TabView2和TabView3,3个例子。
 
   ```java
       /**
