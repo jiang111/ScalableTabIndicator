@@ -122,7 +122,6 @@ public class ScalableTabIndicator extends RelativeLayout implements ViewPager.On
      */
     public void addTab(Tab tab) {
         tabs.add(tab);
-        //先对控件进行测量,所以在tab类中的getTabNeededWidth请使用mRootView.getMeasuredWidth()>mRootView.getWidth()?mRootView.getMeasuredWidth():mRootView.getWidth()
         tab.setPosition(tabs.size() - 1);
         tab.setScalableTabIndicator(this);
     }
