@@ -66,14 +66,6 @@ public abstract class Tab implements View.OnClickListener {
     public abstract void dismissed();
 
     /**
-     * 获取该控件需要的宽度
-     * 推荐使用:getMeasuredWidth()>getWidth()?getMeasuredWidth():getWidth()
-     *
-     * @return
-     */
-    public abstract int getTabNeededWidth();
-
-    /**
      * 获取view
      *
      * @return

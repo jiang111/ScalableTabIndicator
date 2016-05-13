@@ -67,10 +67,6 @@ public class TabView2 extends Tab {
 
     }
 
-    @Override
-    public int getTabNeededWidth() {
-        return mRootView.getMeasuredWidth() > mRootView.getWidth() ? mRootView.getMeasuredWidth() : mRootView.getWidth();
-    }
 
     @Override
     public View getView() {
