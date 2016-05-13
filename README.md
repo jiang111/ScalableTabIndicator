@@ -10,7 +10,7 @@
 ### 导入
 gradle
 ```
-compile 'com.jiang.android.scalabletabindicator:library:@aar'
+compile 'com.jiang.android.scalabletabindicator:library:1.0.5'
 
 ```
 
@@ -20,7 +20,7 @@ Maven
 <dependency>
   <groupId>com.jiang.android.scalabletabindicator</groupId>
   <artifactId>library</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.5</version>
   <type>pom</type>
 </dependency>
 ```
@@ -30,7 +30,7 @@ Maven
 >* 导入项目
 
   ```
-  compile 'com.jiang.android.scalabletabindicator:library:1.0.1'
+  compile 'com.jiang.android.scalabletabindicator:library:1.0.5'
   
   ```
 
